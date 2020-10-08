@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+ layout:decorator="customer/layout">
+ 
+ 	<div class="col-sm-12" layout:fragment="content">
+	 	<div class="row">
+	 		<div class="col-sm-8">
+     	
+     			<div class="element-wrapper">
+			      <div class="element-box">
+			        <form id="formValidate" novalidate="true" method="post" th:object="${complaint}" th:action="@{/customer/complaints/create}">
+			          <div class="element-info">
+			            <div class="element-info-with-icon">
+			              <div class="element-info-icon">
+			                <div class="os-icon os-icon-wallet-loaded"></div>
+			              </div>
+			              <div class="element-info-text">
+			                <h5 class="element-inner-header">
+			                  Create Complaint
+			                </h5>
+			                
+			              </div>
+			            </div>
+			          </div>
+			          <fieldset class="form-group">
+			            <div class="row">
+			              <div class="col-sm-12">
+			                <div class="form-group">
+			                  <label for="">Name</label>
+			                  <input name="name" class="form-control" data-error="Please input your Name" placeholder="Name" required="required" th:field="${complaint.customer.name}" type="text" readonly>
+			                  <div class="help-block form-text with-errors form-control-feedback"></div>
+			                </div>
+			              </div>
+			            </div>
+			          
+			             <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Email</label>
+				                    <input name="email"  class="form-control" data-error="Please input your email" required="required" th:field="${complaint.customer.email}" placeholder="Email" type="email" readonly>
+				              		<div class="help-block form-text with-errors form-control-feedback"></div>
+				              
+				                  </div>
+				             </div>
+			            </div>
+			            <div class="form-group row">
+			              <label class="col-sm-12 col-form-label" for="">Complaint Date</label>
+			              <div class="col-sm-12">
+			                <div class="date-input">
+			                  <input class="single-daterange form-control" th:field="${complaint.complaintdate}" placeholder="Date of loss date" type="text" value="04/12/2019" readonly>
+			                </div>
+			              </div>
+			            </div>
+			            <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Phone Number</label>
+				                  <div class="input-group">
+				                    <div class="input-group-prepend">
+				                      <div class="input-group-text">
+				                        +234
+				                      </div>
+				                    </div>
+				                    <input name="phone" class="form-control" placeholder="phone" data-error="Please input your phone" th:field="${complaint.customer.phone}" required="required" type="number" readonly>
+				             		<div class="help-block form-text with-errors form-control-feedback"></div>
+				                  	
+				                  </div>
+				                </div>
+				             </div>
+			            </div>
+			            <div class="form-group">
+			              <label>Complaint Description</label>
+			              <textarea class="form-control" rows="3" name="description" th:field="${complaint.description}" readonly></textarea>
+			            </div>
+			          </fieldset>
+			     
+			        </form>
+			      </div>
+			    </div>
+  		</div>
+  		<div class="col-sm-4">
+  		  	 <div th:replace="~{customer/menu :: side_bar}"></div>
+  		</div>
+	 	
+	 	</div>
+	     	
+  		
+  	</div>
+ 
+ 
+ 
+ 
+ </html>

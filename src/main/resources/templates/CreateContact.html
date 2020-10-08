@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+ layout:decorator="customer/layout">
+ 
+ 	<div class="col-sm-12" layout:fragment="content">
+	 	<div class="row">
+	 		<div class="col-sm-8">
+     	
+     			<div class="element-wrapper">
+			      <div class="element-box">
+			        <form id="formValidate" novalidate="true" th:object="${contact}" method="post" th:action="@{/contacts/create}">
+			          <div class="element-info">
+			            <div class="element-info-with-icon">
+			              <div class="element-info-icon">
+			                <div class="os-icon os-icon-wallet-loaded"></div>
+			              </div>
+			              <div class="element-info-text">
+			                <h5 class="element-inner-header">
+			                  Create Contact
+			                </h5>
+			                
+			              </div>
+			            </div>
+			          </div>
+			          <fieldset class="form-group">
+			            <div class="row">
+			              <div class="col-sm-12">
+			                <div class="form-group">
+			                  <label for="">Name</label>
+			                  <input name="name" class="form-control" data-error="Please input your Name" th:field="*{contactname} "placeholder="Name" required="required"  type="text">
+			                  <div class="help-block form-text with-errors form-control-feedback"></div>
+			                </div>
+			              </div>
+			            </div>
+			          
+			             <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Email</label>
+				                    <input name="email"  class="form-control" data-error="Please input your email" th:field="*{email}" placeholder="Email" type="email">				              
+				                  </div>
+				             </div>
+			            </div>
+			            
+			            <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Phone Number</label>
+				                  <div class="input-group">
+				                    <div class="input-group-prepend">
+				                      <div class="input-group-text">
+				                        +234
+				                      </div>
+				                    </div>
+				                    <input name="phone" class="form-control" placeholder="phone" data-error="Please input your phone" th:field="*{phone}" required="required" type="number">
+				             		<div class="help-block form-text with-errors form-control-feedback"></div>
+				                  	
+				                  </div>
+				                </div>
+				             </div>
+			            </div>
+			            
+			            <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Pick Tag</label>
+				                   <select class="form-control mb-2 mr-sm-2 mb-sm-0 col-sm-12 select2"  multiple="true" th:field="*{tagids}" placeholder="Category Name" type="text">
+								      	<option th:each="tag: ${tags}" th:value="${tag.id}" th:text="${tag.name}"></option>
+								      </select>
+				                  </div>
+				             </div>
+			            </div>
+			            
+			           
+			          </fieldset>
+			     
+			          <div class="form-buttons-w">
+			            <button class="btn btn-primary" type="submit"> Submit</button>
+			          </div>
+			        </form>
+			      </div>
+			    </div>
+  		</div>
+  		<div class="col-sm-4">
+  		  	 <div th:replace="~{customer/menu :: side_bar}"></div>
+  		</div>
+	 	
+	 	</div>
+	     	
+  		
+  	</div>
+ 
+ 
+ 
+ 
+ </html>

@@ -1,0 +1,113 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+ layout:decorator="customer/layout">
+            <div layout:fragment="content">
+              <div class="row">
+	                <div class="col-sm-8">
+	                  <div class="element-wrapper">
+	                    <div class="element-box">
+	                        <h5 class="form-header" th:text="${claim.insuredName}">
+	                          
+	                        </h5>
+	                    	<div class="form-group">
+	                          <label for="">Insured Name</label><input class="form-control"  th:placeholder="${claim.insuredName} "required="required" type="text" disabled>
+	                          <div class="help-block form-text with-errors form-control-feedback"></div>
+	                        </div>
+	                        <div class="form-group">
+	                          <label for=""> Email address</label><input class="form-control" data-error="Your email address is invalid" placeholder="" value="james.whitherspoon@aol.com" required="required" type="email" disabled>
+	                          <div class="help-block form-text with-errors form-control-feedback"></div>
+	                        </div>
+	                        <div class="row">
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for=""> Claim Number</label><input class="form-control" data-minlength="6" placeholder="Password" required="required" type="text" th:value="${claim.claimNo}" disabled>
+	                              
+	                            </div>
+	                          </div>
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Policy Number</label><input class="form-control" data-match-error="Passwords don't match" placeholder="Confirm Password" required="required" type="text" th:value="${claim.policyNo}"  disabled>
+	                              <div class="help-block form-text with-errors form-control-feedback"></div>
+	                            </div>
+	                          </div>
+	                        </div>
+	                       
+	                        
+	                    
+	                        
+	                        <div class="form-group">
+	                          <label for="">Product</label><input class="form-control"  th:value="${claim.subClass}" required="required" type="text" disabled>
+	                          <div class="help-block form-text with-errors form-control-feedback"></div>
+	                        </div>
+	                        
+	                         <div class="row">
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for=""> Entry Date</label>
+	                              <input class="form-control" data-minlength="6" placeholder="Password" required="required" type="text" th:value="${claim.entryDate}" disabled>
+	                              
+	                            </div>
+	                          </div>
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Exit Date</label>
+	                              <input class="form-control" data-match-error="Passwords don't match" placeholder="Confirm Password" required="required" type="text" th:value="${claim.exitDate}"  disabled>
+	                              <div class="help-block form-text with-errors form-control-feedback"></div>
+	                            </div>
+	                          </div>
+	                          </div>
+		                         
+		                         <div class="row" th:if="${claim.inspector}">
+			                            <div class="col-sm-6">
+			                              <div class="form-group">
+			                                <label for="">Inspector Id</label><input class="form-control"  placeholder="First Name" required="required" th:value="${claim.inspector.id }" type="text" disabled>
+			                                <div class="help-block form-text with-errors form-control-feedback"></div>
+			                              </div>
+			                            </div>
+			                            <div class="col-sm-6">
+			                              <div class="form-group">
+			                                <label for="">Inspector Name</label><input class="form-control"  required="required" type="text" th:value="${claim.inspector.name	}" disabled>
+			                                <div class="help-block form-text with-errors form-control-feedback"></div>
+			                              </div>
+			                            </div>
+			                     </div>
+			                      
+				  					
+		                         
+	
+	                   </div>
+	                    
+	                  </div>
+	                 </div>
+	                 <div class="col-sm-4">
+	                  	 <div class="element-wrapper" th:if="${claim.notifications}">
+				             <h6 class="element-header">
+			                  Notifications
+			                </h6>
+	                    	<div class="logged-user-w avatar-inline" style="padding:0px;">
+	                    		<div class="element-box" style="padding: inherit">
+			                    	<div class="logged-user-i"  style="margin-top:15px;" th:each=" nots : ${claim.notifications}">
+						              <div class="avatar-w">
+						                <img alt="" src="/img/avatar1.jpg">
+						              </div>
+						              <div class="logged-user-info-w">
+						                <div class="logged-user-name" th:text="${nots.user.name}">Customer Users</div>
+						                <div class="logged-user-role">
+						                  <p th:text="${nots.message }">customer</p>
+						              	  <hr>
+						                  
+						                </div>
+						              </div>
+		             
+		           		 			</div>
+	           		 			</div>
+	           		 		</div>
+	                    			
+	                    </div>
+	                 </div>
+                </div>
+              </div>
+            </div>
+ </html>

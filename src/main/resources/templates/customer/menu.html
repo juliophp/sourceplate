@@ -1,0 +1,220 @@
+		
+		<!--------------------
+          START - Mobile Menu
+          -------------------->
+			<div class="menu-mobile menu-activated-on-click color-scheme-dark" th:fragment="mob_menu">
+				<div class="mm-logo-buttons-w">
+					<a class="mm-logo" th:href="@{/contacts/create}"><img th:src="@{/img/logo.png}"><span>SourcePlate</span></a>
+					<div class="mm-buttons">
+						<div class="content-panel-open">
+							<div class="os-icon os-icon-grid-circles"></div>
+						</div>
+						<div class="mobile-menu-trigger">
+							<div class="os-icon os-icon-hamburger-menu-1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-and-user">
+			 <!--------------------
+              START - Mobile Menu List
+              -------------------->
+					<ul class="main-menu">
+						<li>
+						<a th:href="@{/contacts/create}">
+								<div class="icon-w">
+									<div class="os-icon os-icon-layout"></div>
+								</div> <span>Home</span>
+						</a>
+						</li>
+						<li class="has-sub-menu">
+							<a href="#">
+									<div class="icon-w">
+										<div class="os-icon os-icon-layers"></div>
+									</div> <span>Contacts</span>
+							</a>
+							<ul class="sub-menu">
+							<li><a th:href="@{/contacts/create/}">New Contact</a></li>
+							<li><a th:href="@{/contacts/}">All Contacts</a></li>
+							
+							</ul>
+						</li>
+						<li class="has-sub-menu">
+						<a href="#">
+								<div class="icon-w">
+									<div class="os-icon os-icon-package"></div>
+								</div><span>Tags</span>
+						</a>
+						<ul class="sub-menu">
+							<li><a th:href="@{/tags/create/}">Create Tags</a></li>
+							<li><a th:href="@{/tags/}">All Tags</a></li>
+						</ul>
+						</li>
+						<li class="has-sub-menu">
+						<a href="#">
+								<div class="icon-w">
+									<div class="os-icon os-icon-users"></div>
+								</div> <span>Categories</span>
+						</a>
+							<ul class="sub-menu">
+								<li><a th:href="@{/categories/}">All Categories</a></li>
+								<li><a th:href="@{/categories/create}">Add Category</a></li>
+								
+							</ul>
+						</li>						
+					</ul>
+					<!--------------------
+              END - Mobile Menu List
+              -------------------->
+		
+				</div>
+			</div>
+			<!--------------------
+          END - Mobile Menu
+          -------------------->
+			<!--------------------
+          START - Main Menu
+          -------------------->
+ 			<!--------------------
+               START - Main Menu
+               -------------------->
+            <div class="menu-w color-scheme-light color-style-transparent menu-position-side menu-side-left menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-light menu-activated-on-hover menu-has-selected-link" th:fragment="main_menu">
+               <div class="logo-w">
+                  <a class="logo" th:href="@{/contacts/}">
+                     <div class="logo-element"></div>
+                     <div class="logo-label">Source Plate.</div>
+                  </a>
+               </div>
+               <div class="logged-user-w avatar-inline">
+            <div class="logged-user-i">
+              <div class="avatar-w">
+                <img alt="" th:src="@{/img/avatar1.jpg}">
+              </div>
+              <div class="logged-user-info-w">
+                <div class="logged-user-name"  th:text="${customer.firstname}">
+                  Maria Gomez
+                </div>
+                <div class="logged-user-role">
+                  <p th:text="User"></p>
+                </div>
+              </div>
+              <div class="logged-user-toggler-arrow">
+                <div class="os-icon os-icon-chevron-down"></div>
+              </div>
+              <div class="logged-user-menu color-style-bright">
+                <div class="logged-user-avatar-info">
+                  <div class="avatar-w">
+                    <img alt="" th:src="@{/img/avatar1.jpg}">
+                  </div>
+                  <div class="logged-user-info-w">
+                    <div class="logged-user-name" th:text="${customer.firstname}">
+                      Maria Gomez
+                    </div>
+                    <div class="logged-user-role">
+                      User
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-icon">
+                  <i class="os-icon os-icon-wallet-loaded"></i>
+                </div>
+                <ul>
+                  <li>
+                    <a href="#"><i class="os-icon os-icon-user-male-circle2"></i><span>Profile Details</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="os-icon os-icon-coins-4"></i><span>Reset Password</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="os-icon os-icon-others-43"></i><span>Notifications</span></a>
+                  </li>
+                  <li>
+                    <a th:href="@{/logout}"><i class="os-icon os-icon-signs-11"></i><span>Logout</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+               <h1 class="menu-page-header">Page Header</h1>
+               <ul class="main-menu">
+                  <li class="sub-header"><span>Main Actions</span></li>
+                  <li class="selected">
+                     <a th:href="@{/contacts/create}">
+                        <div class="icon-w">
+                           <div class="os-icon os-icon-layout"></div>
+                        </div>
+                        <span>Create Contact</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a th:href="@{/contacts/}">
+                        <div class="icon-w">
+                           <div class="os-icon os-icon-layers"></div>
+                        </div>
+                        <span>Contacts</span>
+                     </a>
+                  </li>
+                  
+                  <li>
+                     <a th:href="@{/tags/}">
+                        <div class="icon-w">
+                           <div class="os-icon os-icon-layers"></div>
+                        </div>
+                        <span>Tags</span>
+                     </a>
+                  </li>
+                 
+                  <li>
+                     <a th:href="@{/categories/}">
+                        <div class="icon-w">
+                           <div class="os-icon os-icon-layers"></div>
+                        </div>
+                        <span>Categories</span>
+                     </a>
+                  </li>
+                  
+                 
+
+               </ul>
+            </div>
+            <!--------------------
+               END - Main Menu
+               -------------------->			
+               <!--------------------
+          END - Main Menu
+          -------------------->
+          
+             <!--------------------
+            START - Sidebar
+            -------------------->
+            <div class="content-panel" th:fragment="side_bar">
+              <div class="content-panel-close">
+                <i class="os-icon os-icon-close"></i>
+              </div>
+              <div class="element-wrapper">
+                <h6 class="element-header">
+                  Quick Links
+                </h6>
+                <div class="element-box-tp">
+                  <div class="el-buttons-list full-width">
+                   	<a class="btn btn-white btn-sm" th:href="@{/contacts/create}">
+                    	<i class="os-icon os-icon-window-content"></i>
+                    	<span>Create Contacts</span>
+                   	</a>
+                   	<a class="btn btn-white btn-sm" th:href="@{/tags/}">
+                    	<i class="os-icon os-icon-window-content"></i>
+                    	<span>Add Tags</span>
+                   	</a>
+                   	<a class="btn btn-white btn-sm" th:href="@{/categories/}">
+                    	<i class="os-icon os-icon-wallet-loaded"></i>
+                    	<span>Add Categories</span>
+                   	</a>	
+                  </div>
+                </div>
+              </div>
+             
+              
+             
+            </div>
+            <!--------------------
+            END - Sidebar
+            -------------------->

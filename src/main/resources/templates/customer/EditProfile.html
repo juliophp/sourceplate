@@ -1,0 +1,202 @@
+ <html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+ layout:decorator="customer/layout">
+ 
+    
+        
+        <div class="col-sm-12" layout:fragment="content">
+        
+        	<div class="row">
+        		<div class="col-sm-4">
+			        <div class="element-wrapper">
+			        	<div class="element-box">
+						    <div class="user-profile compact">
+						      <div class="up-head-w" style="background-image:url(@{/img/profile_bg1.jpg})">
+						        <div class="up-social">
+						          <a href="#"><i class="os-icon os-icon-twitter"></i></a><a href="#"><i class="os-icon os-icon-facebook"></i></a>
+						        </div>
+						        <div class="up-main-info">
+						          <h2 class="up-header" th:text="${customer.name}">
+						          </h2>
+						          <h6 class="up-sub-header">
+						            Customer
+						          </h6>
+						        </div>
+						        <svg class="decor" width="842px" height="219px" viewBox="0 0 842 219" preserveAspectRatio="xMaxYMax meet" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-381.000000, -362.000000)" fill="#FFFFFF"><path class="decor-path" d="M1223,362 L1223,581 L381,581 C868.912802,575.666667 1149.57947,502.666667 1223,362 Z"></path></g></svg>
+						      </div>
+						      <div class="up-controls">
+						        <div class="row">
+						          <div class="col-sm-6">
+						            <div class="value-pair">
+						              <div class="label">
+						                Status:
+						              </div>
+						              <div class="value badge badge-pill badge-success">
+						                Online
+						              </div>
+						            </div>
+						          </div>
+						          <div class="col-sm-6 text-right">
+						          </div>
+						        </div>
+						      </div>
+						      <div class="up-contents">
+						        <div class="m-b">
+						          <div class="row m-b">
+						            <div class="col-sm-6 b-r b-b">
+						              <div class="el-tablo centered padded-v">
+						                <div class="value">
+						                  25
+						                </div>
+						                <div class="label">
+						                  Policies
+						                </div>
+						              </div>
+						            </div>
+						            <div class="col-sm-6 b-b">
+						              <div class="el-tablo centered padded-v">
+						                <div class="value">
+						                  315
+						                </div>
+						                <div class="label">
+						                 Claims
+						                </div>
+						              </div>
+						            </div>
+						          </div>
+						          <div class="padded">
+						            <div class="os-progress-bar primary">
+						              <div class="bar-labels">
+						                <div class="bar-label-left">
+						                  <span>Profile Completion</span><span class="positive">+10</span>
+						                </div>
+						                <div class="bar-label-right">
+						                  <span class="info">72/100</span>
+						                </div>
+						              </div>
+						              <div class="bar-level-1" style="width: 100%">
+						                <div class="bar-level-2" style="width: 100%">
+						                  <div class="bar-level-3" style="width: 30%"></div>
+						                </div>
+						              </div>
+						            </div>
+						           
+						         
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+				   		</div>
+			 		</div>
+
+  			</div>
+        	<div class="col-sm-6">
+			    <div class="element-wrapper">
+			      <div class="element-box">
+			        <form id="formValidate" novalidate="true" method="post" th:object="${profile}" th:action="@{/customer/profile/edit}">
+			          <div class="element-info">
+			            <div class="element-info-with-icon">
+			              <div class="element-info-icon">
+			                <div class="os-icon os-icon-wallet-loaded"></div>
+			              </div>
+			              <div class="element-info-text">
+			                <h5 class="element-inner-header">
+			                  Profile Settings
+			                </h5>
+			                
+			              </div>
+			            </div>
+			          </div>
+			          <fieldset class="form-group">
+			            <legend><span>Update Profile</span></legend>
+			            <div class="row">
+			              <div class="col-sm-12">
+			                <div class="form-group">
+			                  <label for="">Name</label>
+			                  <input name="name" th:field="${profile.name}" class="form-control" data-error="Please input your Name" placeholder="Name" required="required" type="text">
+			                  <div class="help-block form-text with-errors form-control-feedback"></div>
+			                </div>
+			              </div>
+			            </div>
+			          
+			             <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Email</label>
+				                    <input name="email" th:field="${profile.email}" class="form-control" data-error="Please input your email" required="required" placeholder="Email" type="email">
+				              		<div class="help-block form-text with-errors form-control-feedback"></div>
+				              
+				                  </div>
+				             </div>
+			            </div>
+			             <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Username</label>
+				                    <input name="usercode" th:field="${profile.usercode}" class="form-control" data-error="Please input your Username" required="required" placeholder="Username" type="text" readonly>
+					                <div class="help-block form-text with-errors form-control-feedback"></div>  	
+				                </div>
+				             </div>
+			            </div>
+			            <div class="row">
+			           		<div class="col-sm-12">
+				               <div class="form-group">
+				                  <label for="">Phone Number</label>
+				                  <div class="input-group">
+				                    <div class="input-group-prepend">
+				                      <div class="input-group-text">
+				                        +234
+				                      </div>
+				                    </div>
+				                    <input name="phone" th:field="${profile.phone}" class="form-control" placeholder="phone" data-error="Please input your phone" required="required" type="number">
+				             		<div class="help-block form-text with-errors form-control-feedback"></div>
+				                  	
+				                  </div>
+				                </div>
+				             </div>
+			            </div>
+			          </fieldset>
+			     
+			          <div class="form-buttons-w">
+			            <button class="btn btn-primary" type="submit"> Submit</button>
+			          </div>
+			        </form>
+			      </div>
+			    </div>
+			 </div>
+        	
+        	
+      	</div>
+      	
+      	  <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="msg" role="dialog" tabindex="-1" th:if="${msg}">
+		      <div class="modal-dialog" role="document">
+		      
+		        <div class="modal-content">
+			          <div class="modal-header">
+			            <h5 class="modal-title" id="viewpolicy">
+			              Message
+			            </h5>
+			            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true"> &times;</span></button>
+			          </div>
+			          <div class="modal-body">
+			          		<th:block>
+			              		<p th:text="${msg}"></p>
+			              </th:block>
+			          </div>
+			          
+			          <div class="modal-footer">
+			            <button class="btn btn-secondary" data-dismiss="modal" type="button"> Close</button>
+			          </div>
+		        </div>
+		      </div>
+		    </div>
+        	
+       </div>
+ 
+ 
+ 
+ 
+ 
+ </html>

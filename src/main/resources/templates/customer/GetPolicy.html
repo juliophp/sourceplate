@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org" 
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+ layout:decorator="customer/layout">
+            <div layout:fragment="content">
+              <div class="row">
+	                <div class="col-sm-8">
+	                  <div class="element-wrapper">
+	                    <div class="element-box">
+	                        <h5 class="form-header" th:text="${policy.insuredName}">
+	                          
+	                        </h5>
+	                    	<div class="form-group">
+	                          <label for="">Insured Name</label><input class="form-control"  th:placeholder="${policy.insuredName} "required="required" type="text" disabled>
+	                          <div class="help-block form-text with-errors form-control-feedback"></div>
+	                        </div>
+	                        <div class="form-group">
+	                          <label for=""> Policy Number</label><input class="form-control" th:value="${policy.PolicyNumber}" required="required"  disabled>
+	                          <div class="help-block form-text with-errors form-control-feedback"></div>
+	                        </div>
+	                        <div class="row">
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Surname</label><input class="form-control" required="required" type="text" th:value="${policy.surname}" disabled>
+	                              
+	                            </div>
+	                          </div>
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Scheme Description</label><input class="form-control" data-match-error="Passwords don't match" placeholder="Confirm Password" required="required" type="text" th:value="${policy.schemedesc}"  disabled>
+	                              <div class="help-block form-text with-errors form-control-feedback"></div>
+	                            </div>
+	                          </div>
+	                        </div>
+	                       
+	                        
+	                        <div class="form-group">
+	                          <label for="">Client Code</label><input class="form-control"  th:value="${policy.clientcode}" required="required" type="text" disabled>
+	                          <div class="help-block form-text with-errors form-control-feedback"></div>
+	                        </div>
+	                        
+	                         <div class="row">
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Commencement Date</label>
+	                              <input class="form-control" data-minlength="6" placeholder="Password" required="required" type="text" th:value="${policy.commencementdate}" disabled>
+	                              
+	                            </div>
+	                          </div>
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Effective Date</label>
+	                              <input class="form-control" data-match-error="Passwords don't match" placeholder="Confirm Password" required="required" type="text" th:value="${policy.effectivedate}"  disabled>
+	                              <div class="help-block form-text with-errors form-control-feedback"></div>
+	                            </div>
+	                          </div>
+	                          </div>
+	                          
+	                          <div class="row">
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Sum Assured</label>
+	                              <input class="form-control" data-minlength="6" placeholder="Password" required="required" type="text" th:value="${policy.sumassAssured}" disabled>
+	                              
+	                            </div>
+	                          </div>
+	                          <div class="col-sm-6">
+	                            <div class="form-group">
+	                              <label for="">Pay Frequency Description</label>
+	                              <input class="form-control" data-match-error="Passwords don't match" placeholder="Confirm Password" required="required" type="text" th:value="${policy.payfreq_desc}"  disabled>
+	                              <div class="help-block form-text with-errors form-control-feedback"></div>
+	                            </div>
+	                          </div>
+	                          </div>
+		                         
+		                         
+			                      
+				  					
+		                         
+	
+	                   </div>
+	                    
+	                  </div>
+	                 </div>
+	                 
+                </div>
+              </div>
+            </div>
+ </html>
